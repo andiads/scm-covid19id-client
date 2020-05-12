@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'scm-covid19id-client';
+  title = 'Angular 9 + Spring Boot SCM Covid19 Indonesia';
 }
