@@ -38,7 +38,7 @@ export class UserService {
   // tslint:disable-next-line: ban-types
   updateUser(id: number, value: any): Observable<Object> {
     //return this.http.put(`${this.USERS_API_URL}/${id}`, value);
-    return this.http.put(`${this.USERS_API_ENDPOINT}/${id}`, value);
+    return this.http.put(`${this.USERS_API_ENDPOINT}/update/${id}`, value);
   }
 
   getUserList(): Observable<any> {

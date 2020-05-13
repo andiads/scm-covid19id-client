@@ -19,10 +19,13 @@
     <div class="form-group">
       <label for="name">Role</label>
       <select class="form-control" name="role" id="role" required [(ngModel)]="user.userType" #role="ngModel">
-        <option value="1">ADMIN</option>
+        <!--<option value="1">ADMIN</option>
         <option value="2">KEMENKES</option>
         <option value="3">LAB</option>
-        <option value="4">BNPB</option>
+        <option value="4">BNPB</option>-->
+        <option *ngFor="let role of roles | async" [value]="role.id">
+          {{role.typeName}}
+        </option>
       </select>
     </div>
 

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../models/user';
+import { Roles } from '../../models/roles';
+import { AdminService } from '../../services/admin.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-create-user',
@@ -11,11 +14,20 @@ import { User } from '../../models/user';
 export class CreateUserComponent implements OnInit {
 
   user: User = new User();
+  roles: Observable<Roles[]>;
   submitted = false;
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(
+    private userService: UserService, 
+    private adminService: AdminService,
+    private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.loadListRoles();
+  }
+
+  loadListRoles() {
+    this.roles = this.adminService.getRolesList();
   }
 
   newUser(): void {
