@@ -28,10 +28,8 @@ export class UpdateUserComponent implements OnInit {
     private adminService: AdminService
   ) {
     this.form = this.formBuilder.group({
-      roles: ['']
+      roles: this.adminService.getRolesList()
     });
-
-    this.roles = this.adminService.getRolesList();
    }
 
   ngOnInit() {

@@ -1,6 +1,6 @@
 <h3>Update User</h3>
 <div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Fullname</label>
       <input type="text" class="form-control" id="fullname" required [(ngModel)]="user.fullname" name="fullname">
@@ -18,12 +18,13 @@
     
     <div class="form-group">
       <label for="name">Role</label>
-      <select class="form-control" name="role" id="role" required [(ngModel)]="user.userType" #role="ngModel">
+      <select formControlName="roles">
+        <!-- name="role" id="role" required [(ngModel)]="user.userType" #role="ngModel"-->
         <!--<option value="1">ADMIN</option>
         <option value="2">KEMENKES</option>
         <option value="3">LAB</option>
         <option value="4">BNPB</option>-->
-        <option *ngFor="let role of roles | async" [value]="role.id">
+        <option *ngFor="let role of roles | async"  [value]="role.id">
           {{role.typeName}}
         </option>
       </select>
