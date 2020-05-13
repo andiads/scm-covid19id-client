@@ -28,9 +28,7 @@ export class UpdateUserComponent implements OnInit {
   ngOnInit() {
 
     this.loadListRoles();
-    
     this.user = new User();
-
     this.id = this.route.snapshot.params['id'];
 
     this.userService.getUser(this.id)
@@ -47,12 +45,12 @@ export class UpdateUserComponent implements OnInit {
   updateUser() {
     this.userService.updateUser(this.id, this.user)
       .subscribe(data => console.log(data), error => console.log(error));
-      this.user = new User();
-      this.gotoList();
+    this.user = new User();
+    this.gotoList();
   }
 
   onSubmit() {
-    this.submitted=true;
+    this.submitted = true;
     this.updateUser();
   }
 
