@@ -21,7 +21,8 @@ export class ItemsListComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.reloadItemsData();
   }
 
   reloadItemsData() {
