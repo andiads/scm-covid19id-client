@@ -10,6 +10,10 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ItemsListComponent } from './components/items-list/items-list.component';
+import { ItemDetailsComponent } from './components/item-details/item-details.component';
+import { CreateItemComponent } from './components/create-item/create-item.component';
+import { UpdateItemComponent } from './components/update-item/update-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     CreateUserComponent,
     UserDetailsComponent,
     UserListComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    ItemsListComponent,
+    ItemDetailsComponent,
+    CreateItemComponent,
+    UpdateItemComponent
   ],
   imports: [
     BrowserModule,

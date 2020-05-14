@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Items List</h2>
+      <a routerLink="add" routerLinkActive="active" class="nav-link btn btn-success">Add New Item</a>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Item Name</th>
+            <th>Item Code</th>
+            <th>Item Brand</th>
+            <th>Item Packaging</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items | async">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.code}}</td>
+            <td>{{item.brand}}</td>
+            <td>{{item.packagingPcs}} {{item.metricsName}} / {{item.packaging}}</td>
+            <td>
+                <button (click)="itemDetails(item.id)" class="btn btn-info">Details</button>
+                <button (click)="updateItem(item.id)" class="btn btn-success" style="margin-left: 10px">Update</button>
+                <button (click)="deleteItem(item.id)" class="btn btn-danger" style="margin-left: 20px">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

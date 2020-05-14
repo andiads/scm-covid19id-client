@@ -1,0 +1,70 @@
+<h3>Add New Item</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Item Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="item.name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Item Code</label>
+      <input type="text" class="form-control" id="code" required [(ngModel)]="item.code" name="code">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Distributor</label>
+      <select class="form-control" name="distributor" id="distributor" required [(ngModel)]="item.distributor" #role="ngModel">
+        <option value="11">Korean Medical Kit,Ltd.</option>
+        <option value="21">Japan HealthPro,Ltd.</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Brand</label>
+      <select class="form-control" name="brand" id="brand" required [(ngModel)]="item.brand" #role="ngModel">
+        <option value="61">Sigma</option>
+        <option value="71">Pierce</option>
+        <option value="81">IDT</option>
+        <option value="91">Bio Rad Laboratories</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Category</label>
+        <select class="form-control" name="category" id="category" required [(ngModel)]="item.category" #role="ngModel">
+          <option value="21">Consumable</option>
+          <option value="31">Medical Toolkit</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Sub Category</label>
+        <select class="form-control" name="subCategory" id="subCategory" required [(ngModel)]="item.subCategory" #role="ngModel">
+          <option value="311">Sekuensing</option>
+          <option value="321">Limited</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Metrics Name</label>
+        <input type="text" class="form-control" id="metricsName" required [(ngModel)]="item.metricsName" name="metricsName">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Item Pieces</label>
+        <input type="text" class="form-control" id="packagingPcs" required [(ngModel)]="item.packagingPcs" name="packagingPcs">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Packaging type</label>
+        <input type="text" class="form-control" id="packaging" required [(ngModel)]="item.packaging" name="packaging">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>
